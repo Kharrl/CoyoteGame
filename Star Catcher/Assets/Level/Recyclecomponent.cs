@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+
 public class Recyclecomponent : MonoBehaviour {
 	private Vector3 newLocation;
 	public List<Recycling> recyclableList;
