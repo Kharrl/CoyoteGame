@@ -7,9 +7,9 @@ public class MoveCameraUp : MonoBehaviour {
 	private Vector3 camPos;
 
 	void OnTriggerEnter(){
-		while (myCamera.transform.position.y <= 22)
+		while (myCamera.transform.position.y < 22)
 			camPos.y = raiseCamera * Time.deltaTime;
-		myCamera.transform.position = camPos;
+		
 	}
 
 }
