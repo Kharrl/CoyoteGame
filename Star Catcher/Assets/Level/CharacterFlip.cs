@@ -10,12 +10,20 @@ public class CharacterFlip : MonoBehaviour {
 	{
 		switch (_keycode) {
 		case KeyCode.RightArrow:
-			characterArt.Rotate(0,180,0);
+			if (forward == false) {
+				characterArt.Rotate (0, 180, 0);
+				forward = true;
+			}
 			break;
 
 		case KeyCode.LeftArrow:
-			characterArt.Rotate(0,180,0);
+			if (forward == true) {
+				characterArt.Rotate (0, -180, 0);
+				forward = false;
+			}
 			break;
+
+
 		}	
 			
 	}
@@ -23,5 +31,6 @@ public class CharacterFlip : MonoBehaviour {
 	{
 		
 		UserInput.UserInputs += flipCharacter;
+		characterArt = this.GetComponent<Transform>();
 	}
 }
