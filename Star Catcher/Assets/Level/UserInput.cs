@@ -6,10 +6,10 @@ using System;
 
 public class UserInput : MonoBehaviour {
 	public static Action<KeyCode> UserInputs;
-
+	private Animator myAnimate;
 	// Use this for initialization
 	void Start () {
-	
+		myAnimate = GetComponent<Animator> ();
 	}
 	
 	// Update is called once per frame
@@ -22,6 +22,12 @@ public class UserInput : MonoBehaviour {
 		{
 			UserInputs (KeyCode.LeftArrow);
 		}	
+		if (Input.GetKeyUp (KeyCode.RightArrow) && UserInputs != null) {
+			myAnimate.enabled = false; 
+		}
+		if (Input.GetKeyUp (KeyCode.LeftArrow) && UserInputs != null) {
+			myAnimate.enabled = false;
+		}
 	 
 	}
 }

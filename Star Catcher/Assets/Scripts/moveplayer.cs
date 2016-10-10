@@ -13,9 +13,11 @@ public class moveplayer: MonoBehaviour
 	public int slideDuration = 100;
 	public float slideTime = 0.1f;
 
+
 	void Start ()
 	{
 		myCC = GetComponent<CharacterController> ();
+
 	}
 
 	IEnumerator Slide ()
