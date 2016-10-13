@@ -1,0 +1,248 @@
+fileFormatVersion: 2
+guid: 2884b6502ab0047578cca283060450d0
+timeCreated: 1476300962
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: group
+    100004: pasted__Ground
+    100006: pasted__group
+    100008: pCube1
+    100010: pCube10
+    100012: pCube11
+    100014: pCube12
+    100016: pCube13
+    100018: pCube14
+    100020: pCube2
+    100022: pCube2 1
+    100024: pCube3
+    100026: pCube3 1
+    100028: pCube4
+    100030: pCube4 1
+    100032: pCube5
+    100034: pCube5 1
+    100036: pCube6
+    100038: pCube6 1
+    100040: pCube7
+    100042: pCube7 1
+    100044: pCube8
+    100046: pCube9
+    100048: pCylinder1
+    100050: pCylinder10
+    100052: pCylinder11
+    100054: pCylinder12
+    100056: pCylinder13
+    100058: pCylinder14
+    100060: pCylinder15
+    100062: pCylinder16
+    100064: pCylinder17
+    100066: pCylinder2
+    100068: pCylinder3
+    100070: pCylinder9
+    100072: pSphere1
+    400000: //RootNode
+    400002: group
+    400004: pasted__Ground
+    400006: pasted__group
+    400008: pCube1
+    400010: pCube10
+    400012: pCube11
+    400014: pCube12
+    400016: pCube13
+    400018: pCube14
+    400020: pCube2
+    400022: pCube2 1
+    400024: pCube3
+    400026: pCube3 1
+    400028: pCube4
+    400030: pCube4 1
+    400032: pCube5
+    400034: pCube5 1
+    400036: pCube6
+    400038: pCube6 1
+    400040: pCube7
+    400042: pCube7 1
+    400044: pCube8
+    400046: pCube9
+    400048: pCylinder1
+    400050: pCylinder10
+    400052: pCylinder11
+    400054: pCylinder12
+    400056: pCylinder13
+    400058: pCylinder14
+    400060: pCylinder15
+    400062: pCylinder16
+    400064: pCylinder17
+    400066: pCylinder2
+    400068: pCylinder3
+    400070: pCylinder9
+    400072: pSphere1
+    2300000: pasted__Ground
+    2300002: pCube1
+    2300004: pCube10
+    2300006: pCube11
+    2300008: pCube12
+    2300010: pCube13
+    2300012: pCube14
+    2300014: pCube2
+    2300016: pCube2 1
+    2300018: pCube3
+    2300020: pCube3 1
+    2300022: pCube4
+    2300024: pCube4 1
+    2300026: pCube5
+    2300028: pCube5 1
+    2300030: pCube6
+    2300032: pCube6 1
+    2300034: pCube7
+    2300036: pCube7 1
+    2300038: pCube8
+    2300040: pCube9
+    2300042: pCylinder1
+    2300044: pCylinder10
+    2300046: pCylinder11
+    2300048: pCylinder12
+    2300050: pCylinder13
+    2300052: pCylinder14
+    2300054: pCylinder15
+    2300056: pCylinder16
+    2300058: pCylinder17
+    2300060: pCylinder2
+    2300062: pCylinder3
+    2300064: pCylinder9
+    2300066: pSphere1
+    3300000: pasted__Ground
+    3300002: pCube1
+    3300004: pCube10
+    3300006: pCube11
+    3300008: pCube12
+    3300010: pCube13
+    3300012: pCube14
+    3300014: pCube2
+    3300016: pCube2 1
+    3300018: pCube3
+    3300020: pCube3 1
+    3300022: pCube4
+    3300024: pCube4 1
+    3300026: pCube5
+    3300028: pCube5 1
+    3300030: pCube6
+    3300032: pCube6 1
+    3300034: pCube7
+    3300036: pCube7 1
+    3300038: pCube8
+    3300040: pCube9
+    3300042: pCylinder1
+    3300044: pCylinder10
+    3300046: pCylinder11
+    3300048: pCylinder12
+    3300050: pCylinder13
+    3300052: pCylinder14
+    3300054: pCylinder15
+    3300056: pCylinder16
+    3300058: pCylinder17
+    3300060: pCylinder2
+    3300062: pCylinder3
+    3300064: pCylinder9
+    3300066: pSphere1
+    4300000: pasted__Ground
+    4300002: pCylinder1
+    4300004: pCylinder2
+    4300006: pCylinder3
+    4300008: pCube1
+    4300010: pCube7
+    4300012: pCube2
+    4300014: pCube6
+    4300016: pCube4
+    4300018: pCube3
+    4300020: pCube5
+    4300022: pCube8
+    4300024: pCube7
+    4300026: pCube2
+    4300028: pCube6
+    4300030: pCube4
+    4300032: pCube3
+    4300034: pCube5
+    4300036: pCube9
+    4300038: pCube10
+    4300040: pCube11
+    4300042: pCylinder9
+    4300044: pCylinder10
+    4300046: pCylinder11
+    4300048: pCylinder12
+    4300050: pCube12
+    4300052: pCube13
+    4300054: pCube14
+    4300056: pSphere1
+    4300058: pCylinder13
+    4300060: pCylinder14
+    4300062: pCylinder15
+    4300064: pCylinder16
+    4300066: pCylinder17
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
