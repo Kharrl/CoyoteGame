@@ -12,6 +12,7 @@ public class moveplayer: MonoBehaviour
 	public int jumpCountMax = 1;
 	public int slideDuration = 100;
 	public float slideTime = 0.1f;
+	public bool Activated=true;
 
 
 	void Start ()
@@ -38,28 +39,25 @@ public class moveplayer: MonoBehaviour
 
 	void Update ()
 	{
-		if(Input.GetKeyDown(KeyCode.Space) && jumpCount < jumpCountMax)
-		{
-			jumpCount++;
-			tempPos.y = jumpSpeed;
-		}
-		if(myCC.isGrounded)
-		{
-			jumpCount = 0;
-		}
+			if (Input.GetKeyDown (KeyCode.Space) && jumpCount < jumpCountMax) {
+				jumpCount++;
+				tempPos.y = jumpSpeed;
+			}
+			if (myCC.isGrounded) {
+				jumpCount = 0;
+			}
 
-		if(Input.GetKey(KeyCode.RightArrow) && Input.GetKeyDown(KeyCode.S))
-		{
-			StartCoroutine(Slide());
-		}
+			if (Input.GetKey (KeyCode.RightArrow) && Input.GetKeyDown (KeyCode.S)) {
+				StartCoroutine (Slide ());
+			}
 
-		if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKeyDown(KeyCode.S))
-		{
-			StartCoroutine(Slide());
-		}
+			if (Input.GetKey (KeyCode.LeftArrow) && Input.GetKeyDown (KeyCode.S)) {
+				StartCoroutine (Slide ());
+			}
 
-		tempPos.y -= gravity;
-		tempPos.x = speed*Input.GetAxis("Horizontal");
-		myCC.Move(tempPos * Time.deltaTime);
+			tempPos.y -= gravity;
+			tempPos.x = speed * Input.GetAxis ("Horizontal");
+			myCC.Move (tempPos * Time.deltaTime);
+		
 	}
 }
