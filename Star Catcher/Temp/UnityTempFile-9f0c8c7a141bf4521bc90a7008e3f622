@@ -85,6 +85,7 @@
 'Assets/Scripts/EnemyAgent.cs'
 'Assets/Scripts/IFStatement.cs'
 'Assets/Scripts/Level/CharacterFlip.cs'
+'Assets/Scripts/Level/GreenlandCamera.cs'
 'Assets/Scripts/Level/MoveCamera.cs'
 'Assets/Scripts/Level/Recyclecomponent.cs'
 'Assets/Scripts/Level/Recycling.cs'

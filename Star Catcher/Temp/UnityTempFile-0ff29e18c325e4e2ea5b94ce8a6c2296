@@ -83,6 +83,7 @@
 -define:UNITY_EDITOR_OSX
 'Assets/Scripts/CharacterControl.cs'
 'Assets/Scripts/EnemyAgent.cs'
+'Assets/Scripts/GreenlandCamera.cs'
 'Assets/Scripts/IFStatement.cs'
 'Assets/Scripts/Level/CharacterFlip.cs'
 'Assets/Scripts/Level/MoveCamera.cs'
