@@ -5,7 +5,7 @@ using System;
 public class GreenlandCamera : MonoBehaviour {
 	public static Action<GreenlandCamera> Hill;
 
-	public void OnTriggerStay()
+	public void OnTriggerEnter()
 	{
 		Hill(this);
 	}

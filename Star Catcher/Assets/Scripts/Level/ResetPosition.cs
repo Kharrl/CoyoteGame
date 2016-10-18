@@ -10,11 +10,8 @@ public class ResetPosition : MonoBehaviour {
 
 	void OnTriggerEnter()
 	{
-		SceneManager.LoadScene(0);
+		SceneManager.LoadScene(1);
 	}
-	public void Restarts()
-	{
-		SceneManager.LoadScene (0);
-	}
+
 }
 	

@@ -12,6 +12,7 @@ public class MoveCamera : MonoBehaviour {
 		MoveCameraUp.Lift += LiftHandler;
 		moveCameraMid.Drop += DropHandler;
 		GreenlandCamera.Hill += HillHandler;
+		GreenlandDowns.Decent += DecentHandler;
 	}
 	// Update is called once per frame
 	void Update () {
@@ -45,6 +46,15 @@ public class MoveCamera : MonoBehaviour {
 	{
 		tempPosition.y = GreenlandUp * Time.deltaTime;
 		transform.Translate (tempPosition);
+		yield return new WaitForSeconds (6);
+		yield return null;
+		tempPosition.y = 0 * Time.deltaTime;
+		transform.Translate (tempPosition);
+	}
+	IEnumerator GreenlandDrop()
+	{
+		tempPosition.y = -GreenlandUp * Time.deltaTime;
+		transform.Translate (tempPosition);
 		yield return null;
 		tempPosition.y = 0 * Time.deltaTime;
 		transform.Translate (tempPosition);
@@ -60,6 +70,10 @@ public class MoveCamera : MonoBehaviour {
 	private void HillHandler(GreenlandCamera Obj)
 	{
 		StartCoroutine (GreenlandRaise ());
+	}
+	private void DecentHandler (GreenlandDowns obj)
+	{
+		StartCoroutine (GreenlandDrop ());
 	}
 }
 

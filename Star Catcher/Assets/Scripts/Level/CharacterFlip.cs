@@ -39,4 +39,8 @@ public class CharacterFlip : MonoBehaviour {
 		UserInput.UserInputs += flipCharacter;
 		characterArt = this.GetComponent<Transform>();
 	}
+	void OnDestroy()
+	{
+		UserInput.UserInputs -= flipCharacter;
+	}
 }
