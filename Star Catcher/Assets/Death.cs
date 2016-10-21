@@ -12,4 +12,8 @@ public class Death : MonoBehaviour {
 	{
 		Destroy (this.gameObject);
 	}
+	private void OnDestroy()
+	{
+		KillBunny.Kill -= KillHandler;
+	}
 }

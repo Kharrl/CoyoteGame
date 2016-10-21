@@ -7,73 +7,45 @@ public class MoveCamera : MonoBehaviour {
 	public float LowerCamera = -20f;
 	public float GreenlandUp =2.5f;
 	private Vector3 tempPosition;
+	public float FrozenFall =30f;
+	public GameObject Player;
+	public GameObject SpawnPlayer;
+	public Transform Spawn;
+	public Transform CampSpawn;
+	public GameObject blimp;
+
 	void Start()
 	{
-		MoveCameraUp.Lift += LiftHandler;
-		moveCameraMid.Drop += DropHandler;
-		GreenlandCamera.Hill += HillHandler;
-		GreenlandDowns.Decent += DecentHandler;
+		ExitBlimp.Landed += LandedHandler;
+		ExitBoat.Docked += DockedHandler;
+		getInBlimp.GetIn += GetInHandler;
+		ElevatorPipe.GoingDown += GoingDownHandler;
+	
 	}
 	// Update is called once per frame
 	void Update () {
+		
 		tempPosition.x = speed * Time.deltaTime;
 		transform.Translate (tempPosition);
-	}
-	IEnumerator Raise ()
+			this.gameObject.transform.position = new Vector3 (this.transform.position.x, Player.transform.position.y+10, this.transform.position.z);
+		}
+	private void GetInHandler(getInBlimp obj)
 	{
+		Player = blimp;
+	}
+	private void LandedHandler(ExitBlimp obj)
+	{
+		Player=Instantiate (SpawnPlayer, Spawn.position, Spawn.rotation)as GameObject;
 
+	}
+	private void DockedHandler(ExitBoat obj)
+	{
+		Player=Instantiate (SpawnPlayer, CampSpawn.position, CampSpawn.rotation)as GameObject;
 
-			tempPosition.y = RaiseCamera*Time.deltaTime;
-			transform.Translate(tempPosition);
-			
-		yield return null;
-		yield return new WaitForSeconds (2);
-		tempPosition.y = 0 * Time.deltaTime;
-		transform.Translate (tempPosition);
 	}
-	IEnumerator Lower ()
+	private void GoingDownHandler(ElevatorPipe obj)
 	{
-		
-			tempPosition.y = LowerCamera * Time.deltaTime;
-			transform.Translate (tempPosition);
-
-		yield return null;
-		yield return new WaitForSeconds(2);
-		tempPosition.y=0*Time.deltaTime;
-		transform.Translate(tempPosition);
-	}
-	IEnumerator GreenlandRaise()
-	{
-		tempPosition.y = GreenlandUp * Time.deltaTime;
-		transform.Translate (tempPosition);
-		yield return new WaitForSeconds (6);
-		yield return null;
-		tempPosition.y = 0 * Time.deltaTime;
-		transform.Translate (tempPosition);
-	}
-	IEnumerator GreenlandDrop()
-	{
-		tempPosition.y = -GreenlandUp * Time.deltaTime;
-		transform.Translate (tempPosition);
-		yield return null;
-		tempPosition.y = 0 * Time.deltaTime;
-		transform.Translate (tempPosition);
-	}
-	private void LiftHandler(MoveCameraUp Obj)
-	{
-		StartCoroutine (Raise ());
-	}
-	private void DropHandler(moveCameraMid Obj)
-	{
-		StartCoroutine (Lower ());
-	}
-	private void HillHandler(GreenlandCamera Obj)
-	{
-		StartCoroutine (GreenlandRaise ());
-	}
-	private void DecentHandler (GreenlandDowns obj)
-	{
-		StartCoroutine (GreenlandDrop ());
+		speed = 0;
 	}
 }
 

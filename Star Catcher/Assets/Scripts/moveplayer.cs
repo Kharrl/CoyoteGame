@@ -4,19 +4,24 @@ using System.Collections;
 public class moveplayer: MonoBehaviour
 {
 	private CharacterController myCC;
+	private Animator myAnimate;
 	private Vector3 tempPos;
 	public float speed = 30.0f;
-	private float gravity = 3f;
+	private float gravity = 4f;
 	public float jumpSpeed = 45.0f;
-	public int jumpCount = 0;
 	public int jumpCountMax = 1;
 	public int slideDuration = 100;
 	public float slideTime = 0.1f;
 	public bool InMud=false;
+	public bool Grounded = true;
+
+
 
 
 	void Start ()
 	{
+		
+		myAnimate = GetComponent<Animator> ();
 		myCC = GetComponent<CharacterController> ();
 		mud.Entermud += EntermudHandler;
 
@@ -53,15 +58,34 @@ public class moveplayer: MonoBehaviour
 
 	void Update ()
 	{
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			myAnimate.SetTrigger ("Jump");
+		}
 		
-			if (Input.GetKeyDown (KeyCode.Space) && jumpCount < jumpCountMax) {
-				jumpCount++;
-				tempPos.y = jumpSpeed;
-			}
-			if (myCC.isGrounded) {
-				jumpCount = 0;
-			}
+		
+		if (Input.GetKeyDown (KeyCode.Space) && StaticVar.JumperCount < jumpCountMax) {
+			StaticVar.JumperCount++;
 
+			//myAnimate.SetLayerWeight (1, 1);
+			tempPos.y = jumpSpeed;
+			StaticVar.Grounded = false;
+
+			}
+		//if(Input.GetKeyUp(KeyCode.Space))
+			//{
+			//	myAnimate.SetTrigger("Jump");
+			//}
+		if (myCC.isGrounded) {
+			StaticVar.JumperCount = 0;
+			//myAnimate.SetLayerWeight (1, 0);
+			myAnimate.ResetTrigger ("Jump");
+			myAnimate.SetBool ("Landing", false);
+		}
+
+			if (myCC.velocity.y < 0) {
+				myAnimate.SetBool ("Landing", true);
+			}
+			
 			if (Input.GetKey (KeyCode.RightArrow) && Input.GetKeyDown (KeyCode.S)) {
 				StartCoroutine (Slide ());
 			}
@@ -73,7 +97,9 @@ public class moveplayer: MonoBehaviour
 			tempPos.y -= gravity;
 			tempPos.x = speed * Input.GetAxis ("Horizontal");
 			myCC.Move (tempPos * Time.deltaTime);
+			myAnimate.SetFloat ("speed", Mathf.Abs (tempPos.x));
 		}
+
 	public void EntermudHandler(mud obj)
 	{
 		if (InMud == false) {
