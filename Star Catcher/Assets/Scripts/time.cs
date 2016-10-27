@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class time : MonoBehaviour {
-	public float myTime = 30.0f;
+	public static Action<time> TimeUP;
+	public float myTime;
 
 	// Use this for initialization
 	void Start () {
@@ -13,14 +15,8 @@ public class time : MonoBehaviour {
 	void Update () {
 		myTime -= Time.deltaTime;
 		if (myTime <= 0f)
-			print ("Game Over"); 
-		if (myTime <= 0f)
-			Destroy (this.gameObject);
-	}
-	void GameClock(){
-		myTime = myTime;
-		
+			TimeUP(this); 
 	
-		
 	}
+
 }

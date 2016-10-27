@@ -8,6 +8,7 @@ public class ElevatorPipe : MonoBehaviour {
 	private Vector3 tempPos;
 	private MeshCollider myMesh;
 	public Transform StartPos;
+
 	void Start()
 	{
 		myMesh = this.GetComponent<MeshCollider> ();

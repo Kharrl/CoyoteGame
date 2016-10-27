@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class ResetPosition : MonoBehaviour {
 	void Start ()
 	{
+		time.TimeUP += TimeUpHandler;
 		StaticVar.nextSectionPosition = StaticVar.startPosition;
 	}
 
@@ -12,6 +13,9 @@ public class ResetPosition : MonoBehaviour {
 	{
 		SceneManager.LoadScene(1);
 	}
-
+	void TimeUpHandler(time obj)
+	{
+		SceneManager.LoadScene (1);
+	}
 }
 	
