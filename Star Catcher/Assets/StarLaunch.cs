@@ -16,7 +16,7 @@ public class StarLaunch : MonoBehaviour {
 	
 	IEnumerator LaunchStar()
 	{
-		yield return new WaitForSeconds(1);
+		yield return new WaitForSeconds(5);
 		Rigidbody starInstance;
 		switch(LaunchSelect)
 		{

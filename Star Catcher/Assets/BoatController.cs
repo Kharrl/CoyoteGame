@@ -12,7 +12,7 @@ public class BoatController : MonoBehaviour {
 		boatStart = this.GetComponent<Transform> ();
 		TempPos = boatStart.position;
 		BoatControl.enabled = false;
-		EnterBoat.HopIn = HopInHandler;
+		EnterBoat.HopIn += HopInHandler;
 		ExitBoat.Docked += DockedHandler;
 	}
 	IEnumerator EnteringBoat()
@@ -39,5 +39,10 @@ public class BoatController : MonoBehaviour {
 	public void DockedHandler(ExitBoat obj)
 	{
 		StartCoroutine (ExitingBoat ());
+	}
+	void OnDestroy()
+	{
+		EnterBoat.HopIn -= HopInHandler;
+		ExitBoat.Docked -= DockedHandler;
 	}
 }

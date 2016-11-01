@@ -42,4 +42,8 @@ public class BlimpControl : MonoBehaviour {
 	{
 		StartCoroutine (ExitingBlimp ());
 	}
+	void OnDestroy()
+	{
+		ExitBlimp.Landed -= LandedHandler;
+	}
 }

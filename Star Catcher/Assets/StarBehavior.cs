@@ -9,7 +9,7 @@ public class StarBehavior : MonoBehaviour {
 	public float torquespeed =3000f;
 	private Vector3 forcevector;
 	private Vector3 torquevector;
-	public float ForceRange = 10000f;
+	public float ForceRange = 5000f;
 	void Start () {
 		Starbody = this.GetComponent<Rigidbody> ();
 		StarCollect.IsCollected += CollectionHandler;

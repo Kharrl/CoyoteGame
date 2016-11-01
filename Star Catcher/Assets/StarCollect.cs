@@ -7,6 +7,6 @@ public class StarCollect : MonoBehaviour {
 	// Use this for initialization
 	void OnTriggerEnter()
 	{
-		IsCollected (this.gameObject);
+		IsCollected (this);
 	}
 }

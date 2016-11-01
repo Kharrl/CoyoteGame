@@ -6,7 +6,6 @@ public class VehicleCamera : MonoBehaviour {
 	private Camera myCamera;
 	public float ZoomSize = 60f;
 	public Transform Greenlandpos;
-	public Transform CampCamera;
 	// Use this for initialization
 	void Start () {
 		KillBunny.Kill += KillHandler;
@@ -36,7 +35,7 @@ public class VehicleCamera : MonoBehaviour {
 	{
 		myCamera.orthographic = true;
 		myCamera.orthographicSize = 25;
-		myCamera.transform.position = CampCamera.position;
+
 	}
 	public void HopInHandler(EnterBoat obj)
 	{
@@ -44,5 +43,12 @@ public class VehicleCamera : MonoBehaviour {
 		myCamera.orthographic = false;
 
 
+	}
+	void OnDestroy()
+	{
+		KillBunny.Kill -= KillHandler;
+		ExitBlimp.Landed -= LandedHandler;
+		EnterBoat.HopIn -= HopInHandler;
+		ExitBoat.Docked -= DockedHandler;
 	}
 }

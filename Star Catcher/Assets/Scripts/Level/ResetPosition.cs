@@ -5,17 +5,24 @@ using UnityEngine.SceneManagement;
 public class ResetPosition : MonoBehaviour {
 	void Start ()
 	{
-		time.TimeUP += TimeUpHandler;
+		timer.TimeUP += TimeUpHandler;
+		StartNewLevel.NewLevel += StartNewLevelHandler;
 		StaticVar.nextSectionPosition = StaticVar.startPosition;
+		StaticVar.GameClock = 100f;
 	}
 
 	void OnTriggerEnter()
 	{
 		SceneManager.LoadScene(1);
 	}
-	void TimeUpHandler(time obj)
+	void TimeUpHandler(timer obj)
 	{
 		SceneManager.LoadScene (1);
 	}
+	void StartNewLevelHandler (StartNewLevel obj)
+	{
+		SceneManager.LoadScene (1);
+	}
+
 }
 	
