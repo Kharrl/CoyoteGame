@@ -4,7 +4,7 @@ using System;
 
 public class timer : MonoBehaviour {
 	public static Action<timer> TimeUP;
-	public static float myTime= 100f;
+	public static float myTime= 300f;
 
 
 	// Use this for initialization

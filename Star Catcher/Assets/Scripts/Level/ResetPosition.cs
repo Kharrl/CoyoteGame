@@ -8,7 +8,7 @@ public class ResetPosition : MonoBehaviour {
 		timer.TimeUP += TimeUpHandler;
 		StartNewLevel.NewLevel += StartNewLevelHandler;
 		StaticVar.nextSectionPosition = StaticVar.startPosition;
-		StaticVar.GameClock = 100f;
+		StaticVar.GameClock = 300f;
 	}
 
 	void OnTriggerEnter()

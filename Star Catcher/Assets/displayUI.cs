@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class displayUI : MonoBehaviour {
 	public Text CollectedStars;
@@ -14,6 +15,8 @@ public class displayUI : MonoBehaviour {
 	void Update () {
 		CollectedStars.text = "Stars Collected:"+StaticVar.StarsCollected;
 		GameTimer.text = ""+Mathf.Round (StaticVar.GameClock-=Time.deltaTime);
-
+		if (StaticVar.GameClock <= 0f) {
+			SceneManager.LoadScene (2);
+		}
 	}
 }
