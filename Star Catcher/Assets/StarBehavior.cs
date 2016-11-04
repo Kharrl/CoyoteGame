@@ -9,27 +9,39 @@ public class StarBehavior : MonoBehaviour {
 	public float torquespeed =3000f;
 	private Vector3 forcevector;
 	private Vector3 torquevector;
-	public float ForceRange = 5000f;
+	public float ForceRange = 10000f;
 	void Start () {
 		Starbody = this.GetComponent<Rigidbody> ();
 		StarCollect.IsCollected += CollectionHandler;
 		StartCoroutine (DestroyStar ());
-		StartCoroutine (runForce ());
+		StartCoroutine (Spins ());
+		ForceStarForward.AddForceForward += AddForceForwardHandler;
+		ForceStarBack.AddBackForce += AddBackForceHandler;
 
 
 	}
-	void Update()
+	void AddForceForwardHandler(ForceStarForward _obj)
 	{
-		
+		StartCoroutine (runForce ());
+	}
+	void AddBackForceHandler(ForceStarBack _obj)
+	{
+		StartCoroutine (MinusForce ());	
+	}
+	IEnumerator MinusForce()
+	{
+		while (canAddForce == true) {
+			yield return new WaitForSeconds (forceDuration);
+			forcevector.x = -ForceRange;
+			Starbody.AddForce (forcevector);
+		}
 	}
 	IEnumerator runForce()
 	{
-		force = Random.Range (-ForceRange, ForceRange);
+		
 		while (canAddForce == true) {
 			yield return new WaitForSeconds (forceDuration);
-			forcevector.x = force;
-			torquevector.y = torquespeed;
-			Starbody.AddTorque (torquevector);
+			forcevector.x = ForceRange;
 			Starbody.AddForce (forcevector);
 		}
 	}
@@ -60,9 +72,17 @@ public class StarBehavior : MonoBehaviour {
 	void OnDestroy()
 	{
 		StarCollect.IsCollected -= CollectionHandler;
+		ForceStarBack.AddBackForce -= AddBackForceHandler;
+		ForceStarForward.AddForceForward -= AddForceForwardHandler;
 	}
 	void OnCollisionEnter()
 	{
 		canAddForce = false;
 	}
+		IEnumerator Spins()
+		{
+			torquevector.y=torquespeed;
+			yield return new WaitForSeconds(forceDuration);
+			Starbody.AddTorque(torquevector);
+		}
 }
