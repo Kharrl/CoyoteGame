@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-public class Gravity : MonoBehaviour {
+public class userupdate : MonoBehaviour {
+	public static Action<userupdate> userinputs;
 
 	// Use this for initialization
 	void Start () {
@@ -10,6 +12,6 @@ public class Gravity : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+		Mathf.Round(StaticVars.GameTime -= Time.deltaTime);
 	}
 }

@@ -9,10 +9,14 @@ public class ZombieBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+		fireweapon.bang += banghandler;
 	}
-	
-	void banghandler()
+	void OnTriggerStay()
+	{
+		CanBeShot = true;
+	}
+
+	void banghandler(fireweapon obj)
 	{
 		if (CanBeShot == true) {
 			StaticVars.playerScore += 10;
