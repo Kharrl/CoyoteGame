@@ -2,9 +2,9 @@
 using System.Collections;
 
 public class StaticVars : MonoBehaviour {
-	public int playerHealth = 10;
-	public float GameTime = 100f;
-	public int Ammo = 0;
-	public int playerScore = 0;
+	public static int playerHealth = 10;
+	public static float GameTime = 100f;
+	public static int Ammo = 0;
+	public static int playerScore = 0;
 
 }
