@@ -12,6 +12,5 @@ public class userupdate : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Mathf.Round(StaticVars.GameTime -= Time.deltaTime);
 	}
 }
