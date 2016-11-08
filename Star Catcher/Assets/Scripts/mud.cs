@@ -9,5 +9,8 @@ public class mud : MonoBehaviour {
 	{
 		Entermud (this);
 	}
-
+	void OnTriggerExit()
+	{
+		Entermud (this);
+	}
 }

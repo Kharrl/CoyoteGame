@@ -6,7 +6,7 @@ public class StartGame : MonoBehaviour {
 
 	public void OnMouseDown()
 			{
-			SceneManager.LoadScene(1);
+		SceneManager.LoadScene(Random.Range(1,4));
 			}
 	
 
