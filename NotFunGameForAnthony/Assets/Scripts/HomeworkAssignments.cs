@@ -20,7 +20,12 @@ public class HomeworkAssignments : MonoBehaviour {
 
 	
 	}
-	
+	/* Syntax is the proper format of writing your code in C#. The main points for
+	 * your syntax is that you end a line with a semicolon, curly braces denote
+	 * groups of commands together. It's important to remember that every open 
+	 * brace has a closing brace. Seperate sections of the same command are usually
+	 * separated by periods and parenthesis usually denote the parameters of certain
+	 * commands or functions.*/
 	// Update is called once per frame
 	void Update () {
 	
