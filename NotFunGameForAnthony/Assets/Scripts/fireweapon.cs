@@ -6,10 +6,10 @@ public class fireweapon : MonoBehaviour {
 	public static Action<fireweapon> bang;
 	void Start()
 	{
-		userupdate.KeyCode += UserInputHandler;
+		userupdate.UserInputs += UserInputHandler;
 	}
 	// Use this for initialization
-	void UserInputHandler(userupdate input)
+	void UserInputHandler(userupdate t)
 	{
 		if (StaticVars.Ammo > 0)
 			bang (this);
