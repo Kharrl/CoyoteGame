@@ -83,9 +83,12 @@
 -define:UNITY_EDITOR_64
 -define:UNITY_EDITOR_OSX
 'Assets/Scripts/DisplayUI.cs'
+'Assets/Scripts/MovePlayer.cs'
 'Assets/Scripts/PickUpAmmo.cs'
 'Assets/Scripts/StaticVars.cs'
+'Assets/Scripts/WeaponRange.cs'
 'Assets/Scripts/ZombieBehavior.cs'
 'Assets/Scripts/fireweapon.cs'
+'Assets/Scripts/userupdate.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.Linq.dll'

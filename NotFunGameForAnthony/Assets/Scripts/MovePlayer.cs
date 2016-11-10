@@ -2,25 +2,44 @@
 using System.Collections;
 
 public class MovePlayer : MonoBehaviour {
-	public float playerspeed =10f;
-	private CharacterController myController;
+
+	private CharacterController myCC;
 	private Vector3 tempPos;
-	private Transform newPos;
-	// Use this for initialization
-	void Start () {
-		myController = GetComponent<CharacterController>();
-		userupdate.userinputs += userinputhandler;
-	}
-	void userinputhandler(userupdate _KeyCode)
+	public float speed = 30.0f;
+	private float gravity = 4f;
+	public float jumpSpeed = 45.0f;
+	public int jumpCountMax = 1;
+	public int slideDuration = 100;
+	public float slideTime = 0.1f;
+	public bool InMud=false;
+	public bool Grounded = true;
+
+
+
+
+	void Start ()
 	{
-		switch (Input) {
-		case KeyCode.A:
-			tempPos.x = -playerspeed;
-			myController.Move (tempPos);
-		}
+
+		myCC = GetComponent<CharacterController> ();
+
 	}
-	// Update is called once per frame
-	void Update () {
-	
+		
+	void Update ()
+	{
+		tempPos.y -= gravity;
+		tempPos.x = speed * Input.GetAxis ("Horizontal");
+		myCC.Move (tempPos * Time.deltaTime);
 	}
-}
+		
+	}
+
+
+
+
+
+
+
+
+
+
+

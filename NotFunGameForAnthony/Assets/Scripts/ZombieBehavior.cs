@@ -4,7 +4,8 @@ using System;
 
 public class ZombieBehavior : MonoBehaviour {
 	public bool CanBeShot=false;
-	private int ZombieHealth = 1;
+	public bool CanBeMelee=false;
+	private int ZombieHealth = 2;
 	public static Action<ZombieBehavior> reDead;
 
 	// Use this for initialization
@@ -14,6 +15,10 @@ public class ZombieBehavior : MonoBehaviour {
 	void OnTriggerStay()
 	{
 		CanBeShot = true;
+	}
+	void OnCollisionEnter(Collider cother)
+	{
+		CanBeMelee = true;
 	}
 
 	void banghandler(fireweapon obj)
