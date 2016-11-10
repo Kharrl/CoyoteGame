@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class displayUI : MonoBehaviour {
 	public Text CollectedStars;
 	public Text GameTimer;
+	public Slider Health;
 	// Use this for initialization
 	void Start () {
 		

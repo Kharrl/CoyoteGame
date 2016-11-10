@@ -16,9 +16,9 @@ public class ZombieBehavior : MonoBehaviour {
 	{
 		CanBeShot = true;
 	}
-	void OnCollisionEnter(Collider cother)
+	void OnTriggerExit()
 	{
-		CanBeMelee = true;
+		CanBeShot=false;
 	}
 
 	void banghandler(fireweapon obj)
