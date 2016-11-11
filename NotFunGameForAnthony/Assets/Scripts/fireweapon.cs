@@ -6,7 +6,7 @@ public class fireweapon : MonoBehaviour {
 	public static Action<fireweapon> bang;
 	void Start()
 	{
-		userupdate.UserInputs += UserInputHandler;
+		
 	}
 	// Use this for initialization
 	void UserInputHandler(userupdate t)

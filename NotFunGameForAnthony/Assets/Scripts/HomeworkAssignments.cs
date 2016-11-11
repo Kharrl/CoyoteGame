@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class HomeworkAssignments : MonoBehaviour {
 	public int EnemyWave;
@@ -79,3 +80,11 @@ public class HomeworkAssignments : MonoBehaviour {
 		 * bools.*/
 	}
 }
+/* The Scope of a variable is the range in which that variable is able to be used.
+ * If the variable is declared within a specific function, it's usable within that
+ * function. If it's declared at the beginning of the script, it's usable throughout 
+ * that script. Access modifiers determine what can see the variable. If a variable
+ * is private then it can only be seen locally, where as a public variable is able 
+ * to be seen not only by other scripts but in the inspector as well, which makes
+ * testing and fine tuning a lot simpler. 
+ */
