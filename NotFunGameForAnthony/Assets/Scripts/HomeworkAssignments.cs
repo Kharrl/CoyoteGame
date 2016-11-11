@@ -3,6 +3,7 @@ using System.Collections;
 
 public class HomeworkAssignments : MonoBehaviour {
 	public int EnemyWave;
+	public int numZombies = 10;
 	/* Variables are containers that hold various types of data. They can be values
 	 * such as int for whole numbers and floats for decimals, they can be game objects,
 	 * components, or bools, which are true/false statements. In order to use a variable
@@ -57,5 +58,24 @@ public class HomeworkAssignments : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+	}
+	void OnTriggerEnter()
+	{
+		for (int i = 0; i < numZombies; i++) {
+			print ("Raising Zombie #" + i);
+		}
+		while (numZombies > 0) {
+			print ("a new zombie is coming for you");
+			numZombies--;
+		}
+		do 
+		{
+			print("Get Ready For Zombie Killing");
+		}while(numZombies>0);
+		/* Loops are a really useful way to repeat code while certain conditions
+		 * are true. There are four loops, for, while, do while, and for each. 
+		 * The loop that I'm most comfortable with is a while loop, it repeats it's 
+		 * coded process while the condition declared is true. Easiest to use by setting
+		 * bools.*/
 	}
 }
