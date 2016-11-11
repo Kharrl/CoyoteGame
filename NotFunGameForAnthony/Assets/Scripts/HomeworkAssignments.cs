@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class HomeworkAssignments : MonoBehaviour {
-	public int EnemyWave = 10;
+	public int EnemyWave;
 	/* Variables are containers that hold various types of data. They can be values
 	 * such as int for whole numbers and floats for decimals, they can be game objects,
 	 * components, or bools, which are true/false statements. In order to use a variable
@@ -17,6 +17,33 @@ public class HomeworkAssignments : MonoBehaviour {
  * which runs once a frame, and OnTriggerEnter which runs when the object is triggered.
  * Functions are the backbone of getting your game to do anything. 
  */
+		StartCoroutine (StartWave ());
+	}
+	IEnumerator StartWave()
+	{
+		EnemyWave = Random.Range (0, 3);
+		
+		switch (EnemyWave) {
+		case 1:
+			print ("zombie 1");
+			break;
+		case 2:
+			print ("Zombie 2");
+			break;
+		case 3:
+			print ("Zombie 3");
+			break;
+		default: 
+			print ("No Zombies");
+			break;
+			/* If Statements and Switch Statements are conditional statements where
+			 * the action of the script is determined by parameters that are set. 
+			 * If Statements are better if there's only two scenarios,
+			 * either the condition is met or unmet. Switch statements are better 
+			 * if there are several different scenarios that all yield different
+			 * results. */
+		}
+		yield return new WaitForSeconds (3);
 
 	
 	}
@@ -25,7 +52,8 @@ public class HomeworkAssignments : MonoBehaviour {
 	 * groups of commands together. It's important to remember that every open 
 	 * brace has a closing brace. Seperate sections of the same command are usually
 	 * separated by periods and parenthesis usually denote the parameters of certain
-	 * commands or functions.*/
+	 * commands or functions.
+		*/
 	// Update is called once per frame
 	void Update () {
 	
