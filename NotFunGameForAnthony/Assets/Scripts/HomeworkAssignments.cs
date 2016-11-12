@@ -85,6 +85,7 @@ public class HomeworkAssignments : MonoBehaviour {
  * function. If it's declared at the beginning of the script, it's usable throughout 
  * that script. Access modifiers determine what can see the variable. If a variable
  * is private then it can only be seen locally, where as a public variable is able 
- * to be seen not only by other scripts but in the inspector as well, which makes
+ * to be seen not only by other scripts but in the inspector as well, which
+ * means that you can make quick changes in realtime. This makes
  * testing and fine tuning a lot simpler. 
  */
