@@ -2,21 +2,21 @@
 using System.Collections;
 
 public class CoyoteControl : MonoBehaviour {
-	public int CoyoteHealth = 3;
+	public int CoyoteHealth = 1;
 	private Vector3 CoyoteJump;
 	public float CoyoteJumpSpeed =20f;
 	public Transform myJump;
+	public GameObject Coyote;
 	// Use this for initialization
 	void Start()
 	{
-		myJump = this.transform;
 		AIJump.JumpingCoyote += JumpinCoyoteHandler;
 	}
 	void OnTriggerEnter()
 	{
 		CoyoteHealth--;
 		if(CoyoteHealth<=0)
-			Destroy(this.gameObject);
+			Destroy(Coyote);
 	}
 	void JumpinCoyoteHandler(AIJump obj)
 	{
