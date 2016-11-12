@@ -12,6 +12,7 @@ public class HurtBunny : MonoBehaviour {
 	IEnumerator Damaged()
 	{
 		StaticVar.StarPower = StaticVar.StarPower - DamageGiven;
+		print ("BunnyHit"+ StaticVar.StarPower);
 		BunnyHit (this);
 		yield return new WaitForSeconds (3);
 	}
