@@ -8,7 +8,7 @@ public class StaticVar{
 	public static float JumperCount=0;
 	public static bool Grounded=true;
 	public static int StarsCollected=0;
-	public static float GameClock =100f;
+	public static float GameClock =120f;
 	public static float MaxStarPower=100f;
 
 
