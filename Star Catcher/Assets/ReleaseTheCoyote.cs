@@ -4,17 +4,18 @@ using System.Collections;
 public class ReleaseTheCoyote : MonoBehaviour {
 	private NavMeshAgent myAgent;
 	public float CoyoteSpeed;
-	public float SpawnTime;
+	public int SpawnTime;
 	public GameObject Coyote;
 	// Use this for initialization
 	void Start () {
 		myAgent = GetComponent<NavMeshAgent> ();
 
-		SpawnTime = Random.Range (5f, 10f);
+		SpawnTime = Random.Range (5, 10);
 		CoyoteSpeed = Random.Range (15f, 45f);
 		myAgent.enabled = false;
 		Coyote.SetActive (false);
 		SelectSpawn.front += SelectionHandler;
+		StartCoroutine (CoyoteActive ());
 	}
 	void SelectionHandler(SelectSpawn obj)
 	{

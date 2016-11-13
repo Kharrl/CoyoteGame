@@ -16,10 +16,12 @@ public class ReleaseTheCoyoteBack : MonoBehaviour {
 		myAgent.enabled = false;
 		Coyote.SetActive (false);
 		SelectSpawn.back += SelectionHandler;
+		StartCoroutine (CoyoteActive ());
 	}
 	void SelectionHandler(SelectSpawn obj)
 	{
-		StartCoroutine (CoyoteActive ());
+			StartCoroutine (CoyoteActive ());
+		
 	}
 	// Update is called once per frame
 	IEnumerator CoyoteActive()
