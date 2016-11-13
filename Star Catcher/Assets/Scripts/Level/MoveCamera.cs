@@ -13,6 +13,8 @@ public class MoveCamera : MonoBehaviour {
 	public Transform Spawn;
 	public Transform CampSpawn;
 	public GameObject blimp;
+	private Transform Target;
+	public float TargetVelocity =10;
 
 	void Start()
 	{
@@ -26,8 +28,9 @@ public class MoveCamera : MonoBehaviour {
 	void Update () {
 		
 		tempPosition.x = speed * Time.deltaTime;
+
+		this.gameObject.transform.position = new Vector3(this.transform.position.x, Player.transform.position.y+10, this.transform.position.z);
 		transform.Translate (tempPosition);
-			this.gameObject.transform.position = new Vector3 (this.transform.position.x, Player.transform.position.y+10, this.transform.position.z);
 		}
 	private void GetInHandler(getInBlimp obj)
 	{

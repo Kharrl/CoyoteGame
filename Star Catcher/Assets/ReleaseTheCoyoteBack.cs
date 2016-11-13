@@ -11,7 +11,7 @@ public class ReleaseTheCoyoteBack : MonoBehaviour {
 	void Start () {
 		myAgent = GetComponent<NavMeshAgent> ();
 
-		SpawnTime = Random.Range (5f, 10f);
+		SpawnTime = Random.Range (20f,30f);
 		CoyoteSpeed = Random.Range (15f, 45f);
 		myAgent.enabled = false;
 		Coyote.SetActive (false);
