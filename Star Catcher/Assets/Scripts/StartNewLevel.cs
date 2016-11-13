@@ -7,6 +7,7 @@ public class StartNewLevel : MonoBehaviour {
 	void Start()
 	{
 		StaticVar.StarPower = 50;
+		StaticVar.GameClock = 120f;
 	}
 
 	void OnMouseDown()
