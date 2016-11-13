@@ -6,10 +6,10 @@ using UnityEngine.SceneManagement;
 public class displayUI : MonoBehaviour {
 	public Text CollectedStars;
 	public Text GameTimer;
-	public Slider Health;
+
 	// Use this for initialization
 	void Start () {
-		
+		HurtBunny.BunnyHit += BunnyGameHandler;
 	}
 	
 	// Update is called once per frame
@@ -19,5 +19,10 @@ public class displayUI : MonoBehaviour {
 		if (StaticVar.GameClock <= 0f) {
 			SceneManager.LoadScene (2);
 		}
+	}
+	void BunnyGameHandler(HurtBunny obj)
+	{
+		if (StaticVar.StarPower <= 0)
+			SceneManager.LoadScene (2);
 	}
 }
