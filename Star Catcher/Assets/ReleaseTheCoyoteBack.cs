@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ReleaseTheCoyote : MonoBehaviour {
+public class ReleaseTheCoyoteBack : MonoBehaviour {
+
 	private NavMeshAgent myAgent;
 	public float CoyoteSpeed;
 	public float SpawnTime;
@@ -14,7 +15,7 @@ public class ReleaseTheCoyote : MonoBehaviour {
 		CoyoteSpeed = Random.Range (15f, 45f);
 		myAgent.enabled = false;
 		Coyote.SetActive (false);
-		SelectSpawn.front += SelectionHandler;
+		SelectSpawn.back += SelectionHandler;
 	}
 	void SelectionHandler(SelectSpawn obj)
 	{
@@ -28,4 +29,5 @@ public class ReleaseTheCoyote : MonoBehaviour {
 		myAgent.enabled = true;
 		Coyote.SetActive (true);
 	}
+
 }
