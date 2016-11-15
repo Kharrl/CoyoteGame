@@ -10,6 +10,8 @@ public class ZombieMeleeRange : ZombieBehavior {
 	void HitHandler(Melee obj)
 	{
 		TakeDamage ();
+		if (ZombieHealth == 0)
+			KillZombie ();
 	}
 	// Use this for initialization
 	void OnTriggerEnter(){

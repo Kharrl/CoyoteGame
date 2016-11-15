@@ -12,7 +12,7 @@ public class fireweapon : MonoBehaviour {
 	void UserInputHandler(userupdate obj)
 	{
 		
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Space)&& StaticVars.Ammo>0)
 			{
 			Shoot ();
 			}

@@ -7,19 +7,18 @@ public class ZombieAgentScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		userupdate.fakeUpdate += ZombieStalkHandler;
-		ZombieBehavior.Redead += RedeadHandler;
 	}
 	void ZombieStalkHandler(userupdate obj)
 	{
 		Zombies.destination = Player.position;
 	}
-	void RedeadHandler(ZombieBehavior obj)
+	public void KillZombie()
 	{
 		Destroy (this);
+
 	}
 	void OnDestroy()
 	{
 		userupdate.fakeUpdate -= ZombieStalkHandler;
-		ZombieBehavior.Redead -= RedeadHandler;
 	}
 }

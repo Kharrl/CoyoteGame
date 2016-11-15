@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public class ZombieBehavior : MonoBehaviour {
+public class ZombieBehavior : ZombieAgentScript {
 	public int ZombieHealth = 10;
 	private int GunDamage = 1;
 	public static Action<ZombieBehavior> Redead;
@@ -41,7 +41,7 @@ public class ZombieBehavior : MonoBehaviour {
 		ZombieHealth = ZombieHealth - GunDamage;
 		print ("Zombie Health: " + ZombieHealth);
 		if (ZombieHealth == 0) 
-			Redead (this);
+			KillZombie();
 		
 	}
 		
