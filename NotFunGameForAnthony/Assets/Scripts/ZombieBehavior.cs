@@ -10,15 +10,15 @@ public class ZombieBehavior : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		fireweapon.bang += banghandler;
+		
 	}
 	void OnTriggerStay()
 	{
-		CanBeShot = true;
+		fireweapon.bang += banghandler;
 	}
 	void OnTriggerExit()
 	{
-		CanBeShot=false;
+		fireweapon.bang -= banghandler;
 	}
 
 	void banghandler(fireweapon obj)
