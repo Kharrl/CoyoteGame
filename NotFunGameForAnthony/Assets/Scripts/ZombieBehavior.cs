@@ -36,13 +36,16 @@ public class ZombieBehavior : ZombieAgentScript {
 	}
 	public void TakeDamage()
 	{
+		int NewHealth;
 		StaticVars.playerScore += 10;
 		print (StaticVars.playerScore);
-		ZombieHealth = ZombieHealth - GunDamage;
+		NewHealth = ZombieHealth - GunDamage;
+		ZombieHealth = NewHealth;
 		print ("Zombie Health: " + ZombieHealth);
-		if (ZombieHealth == 0) 
-			KillZombie();
-		
+		if (ZombieHealth == 0) {
+			print ("Zombie should have died");
+			KillZombie ();
+		}
 	}
 		
 	void OnDestroy()

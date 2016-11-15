@@ -14,6 +14,7 @@ public class fireweapon : MonoBehaviour {
 		
 		if (Input.GetKeyDown(KeyCode.Space)&& StaticVars.Ammo>0)
 			{
+			StaticVars.Ammo = StaticVars.Ammo - 1;
 			Shoot ();
 			}
 			
