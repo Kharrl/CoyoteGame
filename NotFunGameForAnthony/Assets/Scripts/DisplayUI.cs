@@ -10,7 +10,7 @@ public class DisplayUI : MonoBehaviour {
 	public bool GameActive = true;
 	// Use this for initialization
 	void Start(){
-		ZombieBehavior.reDead += redeadHandler;
+		ZombieBehavior.Redead += redeadHandler;
 		Scoreboard.text = "Score: " + StaticVars.playerScore;
 		Health.text = "Lives: " + StaticVars.playerHealth;
 		AmmoCounter.text = "Ammo: " + StaticVars.Ammo;

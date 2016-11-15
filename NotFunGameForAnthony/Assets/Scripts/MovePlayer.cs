@@ -13,12 +13,12 @@ public class MovePlayer : MonoBehaviour {
 
 	void Start ()
 	{
-
+		userupdate.fakeUpdate += FakeUpdateHandler;
 		myCC = GetComponent<CharacterController> ();
 
 	}
 		
-	void Update ()
+	void FakeUpdateHandler(userupdate obj)
 	{
 		tempPos.y -= gravity;
 		transform.Rotate(0, Input.GetAxis("Horizontal") * RotSpeed * Time.deltaTime, 0);

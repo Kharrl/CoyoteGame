@@ -6,17 +6,29 @@ public class fireweapon : MonoBehaviour {
 	public static Action<fireweapon> bang;
 	void Start()
 	{
-		userupdate.FireGun += UserInputHandler;
+		userupdate.fakeUpdate += UserInputHandler;
 	}
 	// Use this for initialization
 	void UserInputHandler(userupdate obj)
 	{
 		
-			if (StaticVars.Ammo > 0) {
-				print ("bang");
-				bang (this);
+		if (Input.GetKeyDown(KeyCode.Space))
+			{
+			Shoot ();
 			}
 			
-		StaticVars.Ammo--;
+
 	}
+	public void Shoot()
+	{
+		print("Bang");
+		StartCoroutine(ShootZombies());
+	}
+	public IEnumerator ShootZombies()
+	{
+		print("GunFired");
+		bang(this);
+		yield return null;
+		StopCoroutine (ShootZombies ());
+}
 }

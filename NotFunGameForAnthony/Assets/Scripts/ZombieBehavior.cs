@@ -3,32 +3,51 @@ using System.Collections;
 using System;
 
 public class ZombieBehavior : MonoBehaviour {
-	public bool CanBeShot=false;
-	public bool CanBeMelee=false;
-	private int ZombieHealth = 2;
-	public static Action<ZombieBehavior> reDead;
+	public int ZombieHealth = 10;
+	private int GunDamage = 1;
+	public static Action<ZombieBehavior> Redead;
+	public bool CanBeShot = false;
 
 	// Use this for initialization
 	void Start () {
+		userupdate.fakeUpdate += FakeUpdateHandler;
+		fireweapon.bang += banghandler;
+	}
+	void FakeUpdateHandler(userupdate obj){
 		
+		Redead (this);
 	}
 	void OnTriggerStay()
 	{
-		fireweapon.bang += banghandler;
+		CanBeShot = true;
+		print ("can be shot");
 	}
 	void OnTriggerExit()
 	{
-		fireweapon.bang -= banghandler;
+		CanBeShot = false;
+		print ("Out of Range");
 	}
 
 	void banghandler(fireweapon obj)
 	{
 		if (CanBeShot == true) {
-			StaticVars.playerScore += 10;
-			ZombieHealth--;
+			TakeDamage ();
 		}
-		if (ZombieHealth == 0)
-			reDead (this);
-			Destroy (this.gameObject);
+	}
+	public void TakeDamage()
+	{
+		StaticVars.playerScore += 10;
+		print (StaticVars.playerScore);
+		ZombieHealth = ZombieHealth - GunDamage;
+		print ("Zombie Health: " + ZombieHealth);
+		if (ZombieHealth == 0) 
+			Redead (this);
+		
+	}
+		
+	void OnDestroy()
+	{
+		userupdate.fakeUpdate -= FakeUpdateHandler;
+		fireweapon.bang -= banghandler;
 	}
 }
