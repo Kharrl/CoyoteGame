@@ -88,6 +88,7 @@
 'Assets/Scripts/PickUpAmmo.cs'
 'Assets/Scripts/StaticVars.cs'
 'Assets/Scripts/WeaponRange.cs'
+'Assets/Scripts/ZombieAgentScript.cs'
 'Assets/Scripts/ZombieBehavior.cs'
 'Assets/Scripts/fireweapon.cs'
 'Assets/Scripts/userupdate.cs'

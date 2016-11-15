@@ -7,12 +7,17 @@ using System;
 
 public class userupdate : MonoBehaviour {
 	public static Action<KeyCode> UserInputs;
+	public static Action<userupdate> fakeUpdate;
+	public static Action<userupdate> FireGun;
 	// Use this for initialization
 	void Start () {
 	}
 
 	// Update is called once per frame
 	void Update () {
+
+
+		
 		if (Input.GetKeyDown (KeyCode.RightArrow) && UserInputs!=null) 
 		{
 			UserInputs (KeyCode.RightArrow);
@@ -27,10 +32,11 @@ public class userupdate : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.DownArrow) && UserInputs != null) {
 			UserInputs (KeyCode.DownArrow);
 		}
-		if (Input.GetKeyDown (KeyCode.Space) && UserInputs != null) {
-			UserInputs (KeyCode.Space);
+		if (Input.GetKeyDown (KeyCode.Space)) {
+			print ("Gun Fired");
+			FireGun (this);
 		}
-
+		fakeUpdate (this);
 	}
 
 }

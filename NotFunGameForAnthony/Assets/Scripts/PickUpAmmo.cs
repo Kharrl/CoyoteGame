@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PickUpAmmo : MonoBehaviour {
 
-	void OnCollisionEnter()
+	void OnTriggerEnter()
 	{
 		StaticVars.Ammo += 10;
 		Destroy (this.gameObject);

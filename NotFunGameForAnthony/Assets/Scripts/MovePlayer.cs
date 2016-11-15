@@ -5,18 +5,11 @@ public class MovePlayer : MonoBehaviour {
 
 	private CharacterController myCC;
 	private Vector3 tempPos;
-	private Quaternion tempRotate;
-	public float speed = 30.0f;
+	public float RotSpeed=60;
+	public float speed = 5.0f;
 	private float gravity = 4f;
 	public float jumpSpeed = 45.0f;
 	public int jumpCountMax = 1;
-	public int slideDuration = 100;
-	public float slideTime = 0.1f;
-	public bool InMud=false;
-	public bool Grounded = true;
-
-
-
 
 	void Start ()
 	{
@@ -28,8 +21,8 @@ public class MovePlayer : MonoBehaviour {
 	void Update ()
 	{
 		tempPos.y -= gravity;
-		tempPos.x = speed * Input.GetAxis ("Horizontal");
-		tempPos.z = speed * Input.GetAxis ("Vertical");
+		transform.Rotate(0, Input.GetAxis("Horizontal") * RotSpeed * Time.deltaTime, 0);
+		transform.Translate(Vector3.forward * Input.GetAxis ("Vertical")*speed*Time.deltaTime);
 		myCC.Move (tempPos * Time.deltaTime);
 	}
 		

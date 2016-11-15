@@ -6,13 +6,17 @@ public class fireweapon : MonoBehaviour {
 	public static Action<fireweapon> bang;
 	void Start()
 	{
-		
+		userupdate.FireGun += UserInputHandler;
 	}
 	// Use this for initialization
-	void UserInputHandler(userupdate t)
+	void UserInputHandler(userupdate obj)
 	{
-		if (StaticVars.Ammo > 0)
-			bang (this);
+		
+			if (StaticVars.Ammo > 0) {
+				print ("bang");
+				bang (this);
+			}
+			
 		StaticVars.Ammo--;
 	}
 }
