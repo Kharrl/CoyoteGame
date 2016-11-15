@@ -29,7 +29,7 @@ public class MovePlayer : MonoBehaviour {
 	{
 		tempPos.y -= gravity;
 		tempPos.x = speed * Input.GetAxis ("Horizontal");
-		tempRotate.y = speed * Input.GetAxis ("Vertical");
+		tempPos.z = speed * Input.GetAxis ("Vertical");
 		myCC.Move (tempPos * Time.deltaTime);
 	}
 		
