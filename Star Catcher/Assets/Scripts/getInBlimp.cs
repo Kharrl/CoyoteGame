@@ -4,9 +4,18 @@ using System;
 
 public class getInBlimp : MonoBehaviour {
 	public static Action<getInBlimp> GetIn;
+	public Camera mycamera;
+	public Camera MainCamera;
 	// Use this for initialization
+	void Start()
+	{
+		MainCamera.enabled = true;
+		mycamera.enabled = false;
+	}
 	void OnTriggerEnter()
 	{
 		GetIn (this);
+		MainCamera.enabled = false;
+		mycamera.enabled = true;
 	}
 }

@@ -15,7 +15,6 @@ public class MoveCamera : MonoBehaviour {
 	public Transform Spawn;
 	public Transform CampSpawn;
 	public GameObject blimp;
-	private Transform Target;
 	public void Start()
 	{
 		ExitBlimp.Landed += LandedHandler;
@@ -23,13 +22,13 @@ public class MoveCamera : MonoBehaviour {
 		getInBlimp.GetIn += GetInHandler;
 		ElevatorPipe.GoingDown += GoingDownHandler;
 
+
 	
 	}
 	// Update is called once per frame
 	public void Update () {
 		
-		tempPosition.x = speed * Time.deltaTime;
-		transform.Translate (tempPosition);
+	
 
 		}
 	private void GetInHandler(getInBlimp obj)

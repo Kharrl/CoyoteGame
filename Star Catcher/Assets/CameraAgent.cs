@@ -2,27 +2,21 @@
 using System.Collections;
 
 public class CameraAgent : MonoBehaviour{
-	public Transform Player;
-	public NavMeshAgent CamAgent;
-	public Transform Blimp;
-	public Transform newTransorm;
+	public float Gravity = 2f;
+	public float Speed = 5;
+	private Vector3 tempPos;
+	private CharacterController myCC;
+
 	// Use this for initialization
 	void Start () {
-		KillBunny.Kill += KillHandler;
-		MoveCamera.SpawnBunny += SpawnHandler;
-		newTransorm = Player;
+		myCC = GetComponent<CharacterController> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		CamAgent.destination = newTransorm.position;
+		tempPos.x = Speed * Time.deltaTime;
+		tempPos.y = -Gravity*Time.deltaTime;
+		myCC.Move (tempPos);
 	}
-	void SpawnHandler(GameObject Bunny)
-	{
-		newTransorm.position = Bunny.transform.position;
-	}
-	void KillHandler(KillBunny obj)
-	{
-		newTransorm.position = Blimp.transform.position;
-	}
+
 }

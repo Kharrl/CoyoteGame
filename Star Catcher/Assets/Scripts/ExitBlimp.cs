@@ -4,6 +4,8 @@ using System;
 
 public class ExitBlimp : MonoBehaviour {
 	static public Action<ExitBlimp> Landed;
+	public Camera BlimpCam;
+	public Camera MainCam;
 	public bool canSpawnBunny = true;
 
 	void Start()
@@ -14,6 +16,8 @@ public class ExitBlimp : MonoBehaviour {
 	{
 		
 		Landed (this);
+		BlimpCam.enabled = false;
+		MainCam.enabled = true;
 		yield return null;
 	}
 	// Use this for initialization
