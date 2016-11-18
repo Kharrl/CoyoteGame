@@ -18,6 +18,7 @@ public class displayUI : MonoBehaviour {
 		GameTimer.text = ""+Mathf.Round (StaticVar.GameClock-=Time.deltaTime);
 		if (StaticVar.GameClock <= 0f) {
 			SceneManager.LoadScene (2);
+
 		}
 	}
 	void BunnyGameHandler(HurtBunny obj)

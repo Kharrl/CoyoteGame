@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class MoveCamera : MonoBehaviour {
 	public float speed = 5f;
+	public static Action<GameObject> SpawnBunny;
 	public float RaiseCamera = 20f;
 	public float LowerCamera = -20f;
 	public float GreenlandUp =2.5f;
@@ -14,23 +16,21 @@ public class MoveCamera : MonoBehaviour {
 	public Transform CampSpawn;
 	public GameObject blimp;
 	private Transform Target;
-	public float TargetVelocity =10;
-
-	void Start()
+	public void Start()
 	{
 		ExitBlimp.Landed += LandedHandler;
 		ExitBoat.Docked += DockedHandler;
 		getInBlimp.GetIn += GetInHandler;
 		ElevatorPipe.GoingDown += GoingDownHandler;
+
 	
 	}
 	// Update is called once per frame
-	void Update () {
+	public void Update () {
 		
 		tempPosition.x = speed * Time.deltaTime;
-
-		this.gameObject.transform.position = new Vector3(this.transform.position.x, Player.transform.position.y+10, this.transform.position.z);
 		transform.Translate (tempPosition);
+
 		}
 	private void GetInHandler(getInBlimp obj)
 	{
@@ -39,6 +39,7 @@ public class MoveCamera : MonoBehaviour {
 	private void LandedHandler(ExitBlimp obj)
 	{
 		Player=Instantiate (SpawnPlayer, Spawn.position, Spawn.rotation)as GameObject;
+		SpawnBunny (Player);
 
 	}
 	private void DockedHandler(ExitBoat obj)
