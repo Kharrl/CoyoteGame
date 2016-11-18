@@ -7,14 +7,17 @@ public class ExitBlimp : MonoBehaviour {
 	public Camera BlimpCam;
 	public Camera MainCam;
 	public bool canSpawnBunny = true;
+	public GameObject newCamera;
 
 	void Start()
 	{
-		
+		newCamera.SetActive (false);
+		BlimpCam.enabled = false;
+		MainCam.enabled = false;
 	}
 	IEnumerator BlimpLanding()
 	{
-		
+		newCamera.SetActive (true);
 		Landed (this);
 		BlimpCam.enabled = false;
 		MainCam.enabled = true;

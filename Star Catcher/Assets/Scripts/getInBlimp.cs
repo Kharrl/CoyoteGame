@@ -6,6 +6,7 @@ public class getInBlimp : MonoBehaviour {
 	public static Action<getInBlimp> GetIn;
 	public Camera mycamera;
 	public Camera MainCamera;
+	public GameObject FirstCam;
 	// Use this for initialization
 	void Start()
 	{
@@ -17,5 +18,6 @@ public class getInBlimp : MonoBehaviour {
 		GetIn (this);
 		MainCamera.enabled = false;
 		mycamera.enabled = true;
+		FirstCam.SetActive (false);
 	}
 }

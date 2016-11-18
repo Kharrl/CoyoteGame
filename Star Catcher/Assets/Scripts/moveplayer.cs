@@ -131,8 +131,10 @@ public class moveplayer: MonoBehaviour
 
 			tempPos.y -= gravity;
 			tempPos.x = speed * Input.GetAxis ("Horizontal");
+		tempPos.z = 1;
 			myCC.Move (tempPos * Time.deltaTime);
 			myAnimate.SetFloat ("speed", Mathf.Abs (tempPos.x));
+
 		}
 
 	public void EntermudHandler(mud obj)
