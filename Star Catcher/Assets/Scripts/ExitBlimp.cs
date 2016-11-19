@@ -31,10 +31,11 @@ public class ExitBlimp : MonoBehaviour {
 	public void OnTriggerEnter()
 	{
 		if (canSpawnBunny == true) {
-			StartCoroutine (BlimpLanding ());
+			canSpawnBunny = false;
 			Player=Instantiate (SpawnPlayer, Spawn.position, Spawn.rotation)as GameObject;
 			Landed (Player.transform);
-			canSpawnBunny = false;
+			StartCoroutine (BlimpLanding ());
+
 		}
 
 	}
