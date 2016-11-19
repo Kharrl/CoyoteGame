@@ -4,6 +4,7 @@ using System;
 
 public class ExitBlimp : MonoBehaviour {
 	static public Action<Transform> Landed;
+	static public Action<GameObject> Landing;
 	public Camera BlimpCam;
 	public Camera MainCam;
 	public bool canSpawnBunny = true;
@@ -21,9 +22,9 @@ public class ExitBlimp : MonoBehaviour {
 	IEnumerator BlimpLanding()
 	{
 		newCamera.SetActive (true);
-		Landed (Player.transform);
 		BlimpCam.enabled = false;
 		MainCam.enabled = true;
+		Landing (Player);
 		yield return null;
 	}
 	// Use this for initialization
@@ -32,7 +33,7 @@ public class ExitBlimp : MonoBehaviour {
 		if (canSpawnBunny == true) {
 			StartCoroutine (BlimpLanding ());
 			Player=Instantiate (SpawnPlayer, Spawn.position, Spawn.rotation)as GameObject;
-
+			Landed (Player.transform);
 			canSpawnBunny = false;
 		}
 
