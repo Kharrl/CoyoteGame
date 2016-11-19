@@ -8,7 +8,7 @@ public class BlimpRelease : MonoBehaviour {
 	void Start () {
 		ExitBlimp.Landed += BlimpReleaseHandler;
 	}
-	void BlimpReleaseHandler(ExitBlimp obj)
+	void BlimpReleaseHandler(Transform newPlayer)
 	{
 		coyote.enabled=true;
 	}

@@ -8,17 +8,16 @@ public class EnemyAgent : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		MoveCamera.SpawnBunny+= SpawnBunnyHandler;
-
+		ExitBlimp.Landed += SpawnBunnyHandler;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		myAgent.destination = targetplayer.position;
 	}
-	void SpawnBunnyHandler(GameObject Player)
+	void SpawnBunnyHandler(Transform Player)
 	{
-		playerrespawn = Player;
-		targetplayer = playerrespawn.transform;
+		
+		targetplayer = Player;
 	}
 }

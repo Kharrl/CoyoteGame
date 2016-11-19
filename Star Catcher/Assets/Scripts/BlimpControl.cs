@@ -38,7 +38,7 @@ public class BlimpControl : MonoBehaviour {
 		TempPos.y = blimpSpeed * Input.GetAxis ("Vertical");
 		BlimpController.Move (TempPos * Time.deltaTime);
 	}
-	public void LandedHandler(ExitBlimp obj)
+	public void LandedHandler(Transform _obj)
 	{
 		StartCoroutine (ExitingBlimp ());
 	}

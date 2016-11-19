@@ -12,7 +12,6 @@ public class StarBehavior : MonoBehaviour {
 	public float ForceRange = 10000f;
 	void Start () {
 		Starbody = this.GetComponent<Rigidbody> ();
-		StarCollect.IsCollected += CollectionHandler;
 		StartCoroutine (DestroyStar ());
 		StartCoroutine (Spins ());
 		ForceStarForward.AddForceForward += AddForceForwardHandler;
@@ -56,13 +55,7 @@ public class StarBehavior : MonoBehaviour {
 	IEnumerator StarCollects()
 	{
 		
-		if (StaticVar.StarPower < StaticVar.MaxStarPower) {
-			StaticVar.StarPower += 10;
-			print (StaticVar.StarPower);
-		}
-		StaticVar.StarsCollected++;
-		print (StaticVar.StarsCollected);
-		Destroy (this.gameObject);
+
 		yield return null;
 }
 	void CollectionHandler(StarCollect obj)

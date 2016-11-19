@@ -8,6 +8,7 @@ public class StarLaunch : MonoBehaviour {
 	public Transform LaunchD;
 	public Rigidbody Star;
 	public int LaunchSelect;
+	private Rigidbody starInstance;
 	// Use this for initialization
 	void Start () {
 		LaunchSelect = Random.Range (0, 3);
@@ -16,8 +17,7 @@ public class StarLaunch : MonoBehaviour {
 	
 	IEnumerator LaunchStar()
 	{
-		yield return new WaitForSeconds(5);
-		Rigidbody starInstance;
+		yield return new WaitForSeconds(2);
 		switch(LaunchSelect)
 		{
 		case 1:

@@ -26,7 +26,7 @@ public class VehicleCamera : MonoBehaviour {
 		myCamera.orthographicSize = ZoomSize;
 
 	}
-	public void LandedHandler(ExitBlimp obj)
+	public void LandedHandler(Transform obj)
 	{
 		myCamera.orthographicSize = 25;
 		myCamera.transform.position = Greenlandpos.position;
