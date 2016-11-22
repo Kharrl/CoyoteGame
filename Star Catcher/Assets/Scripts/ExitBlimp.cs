@@ -24,7 +24,7 @@ public class ExitBlimp : MonoBehaviour {
 		newCamera.SetActive (true);
 		BlimpCam.enabled = false;
 		MainCam.enabled = true;
-		Landing (Player);
+
 		yield return null;
 	}
 	// Use this for initialization
@@ -34,6 +34,7 @@ public class ExitBlimp : MonoBehaviour {
 			canSpawnBunny = false;
 			Player=Instantiate (SpawnPlayer, Spawn.position, Spawn.rotation)as GameObject;
 			Landed (Player.transform);
+
 			StartCoroutine (BlimpLanding ());
 
 		}
