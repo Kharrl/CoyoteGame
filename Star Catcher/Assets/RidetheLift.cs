@@ -10,6 +10,6 @@ public class RidetheLift : MonoBehaviour {
 		{
 		
 		Elevator.transform.parent = CameraAgt.transform;
-		player.transform.parent = Elevator.transform;
+		player.transform.parent = CameraAgt.transform;
 		}
 }
