@@ -30,17 +30,7 @@ public class moveplayer: MonoBehaviour
 	}
 	void BunnyDamageHandler(HurtBunny obj)
 	{
-		tempPos.x = myCC.velocity.x;
-		if (myCC.velocity.y >= 0) {
-			tempPos.x = tempPos.x * -1;
-		} 
-		else {
-			tempPos.x = tempPos.x * 1.1f;
-			tempPos.y = 0;
-		}
-		if(tempPos.x==0)
-			tempPos.x=10;
-		myCC.Move (tempPos);
+		
 		StartCoroutine (DamageBlink ());
 	}
 	IEnumerator DamageBlink()
