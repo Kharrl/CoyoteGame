@@ -9,15 +9,15 @@ public class StarLaunch : MonoBehaviour {
 	public Rigidbody Star;
 	public int LaunchSelect;
 	private Rigidbody starInstance;
+	public float WaitTime;
 	// Use this for initialization
 	void Start () {
 		LaunchSelect = Random.Range (0, 3);
 		StartCoroutine (LaunchStar ());
 	}
-	
 	IEnumerator LaunchStar()
 	{
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(WaitTime);
 		switch(LaunchSelect)
 		{
 		case 1:
