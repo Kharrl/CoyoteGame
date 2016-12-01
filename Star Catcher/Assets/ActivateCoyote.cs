@@ -7,12 +7,10 @@ public class ActivateCoyote : MonoBehaviour {
 
 	void Start(){
 		coyote = GetComponent<NavMeshAgent> ();
-		coyote.enabled = false;
 		ExitBlimp.Landed = LandedHandler;
 	}
 	void LandedHandler(Transform newPlayer)
 	{
-		coyote.enabled = true;
 		player = newPlayer;
 		coyote.destination = player.position;
 	}

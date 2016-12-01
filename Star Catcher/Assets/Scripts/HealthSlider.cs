@@ -12,6 +12,7 @@ public class HealthSlider : MonoBehaviour {
 		myStarPower.value = myPower;
 		StarCollect.IsCollected += StarCollectedHandler;
 		HurtBunny.BunnyHit += BunnyHitHandler;
+		VehicleStars.BlimpCollect += CollectHandler;
 	}
 
 	public void StarCollectedHandler (StarCollect obj)
@@ -21,6 +22,10 @@ public class HealthSlider : MonoBehaviour {
 	}
 	public void BunnyHitHandler(HurtBunny obj)
 	{
+		myPower = StaticVar.StarPower;
+		myStarPower.value = myPower;
+	}
+	void CollectHandler(){
 		myPower = StaticVar.StarPower;
 		myStarPower.value = myPower;
 	}

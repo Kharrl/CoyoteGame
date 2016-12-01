@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class VehicleStars : MonoBehaviour {
-
+	public static Action BlimpCollect;
 	void OnTriggerEnter()
 	{
 		StartCoroutine (StarCollecter ());
@@ -16,7 +17,9 @@ public class VehicleStars : MonoBehaviour {
 		}
 		StaticVar.StarsCollected++;
 		print (StaticVar.StarsCollected);
+		BlimpCollect();
 		Destroy (this.gameObject);
 		yield return null;
 	}
+
 }
