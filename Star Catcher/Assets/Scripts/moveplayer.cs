@@ -28,6 +28,9 @@ public class moveplayer: MonoBehaviour
 		HurtBunny.BunnyHit += BunnyDamageHandler;
 
 	}
+	void OnDestroy(){
+		HurtBunny.BunnyHit -= BunnyDamageHandler;
+	}
 	void BunnyDamageHandler(HurtBunny obj)
 	{
 		
@@ -123,7 +126,7 @@ public class moveplayer: MonoBehaviour
 			tempPos.x = speed * Input.GetAxis ("Horizontal");
 		tempPos.z = 1;
 			myCC.Move (tempPos * Time.deltaTime);
-			myAnimate.SetFloat ("speed", Mathf.Abs (tempPos.x));
+		myAnimate.SetFloat ("speed", Mathf.Abs (tempPos.x));
 
 		}
 

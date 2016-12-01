@@ -24,6 +24,6 @@ public class displayUI : MonoBehaviour {
 	void BunnyGameHandler(HurtBunny obj)
 	{
 		if (StaticVar.StarPower <= 0)
-			SceneManager.LoadScene (2);
+			SceneManager.LoadScene (3);
 	}
 }
