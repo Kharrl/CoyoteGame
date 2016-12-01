@@ -12,6 +12,7 @@ public class ExitBlimp : MonoBehaviour {
 	public GameObject SpawnPlayer;
 	public Transform Spawn;
 	private GameObject Player;
+	public GameObject blimp;
 
 	void Start()
 	{
@@ -24,6 +25,7 @@ public class ExitBlimp : MonoBehaviour {
 		newCamera.SetActive (true);
 		BlimpCam.enabled = false;
 		MainCam.enabled = true;
+		blimp.SetActive(false);
 
 		yield return null;
 	}

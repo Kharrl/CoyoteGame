@@ -13,7 +13,7 @@ public class BlimpControl : MonoBehaviour {
 		TempPos = blimpStart.position;
 		BlimpController.enabled = false;
 		getInBlimp.GetIn = TurnBlimpOnHandler;
-		ExitBlimp.Landed += LandedHandler;
+		ExitBlimp.Landed = LandedHandler;
 	}
 	IEnumerator EnterBlimp()
 	{
@@ -22,10 +22,9 @@ public class BlimpControl : MonoBehaviour {
 	}
 	IEnumerator ExitingBlimp()
 	{
+		this.gameObject.SetActive (false);
 		BlimpController.enabled = false;
 		yield return null;
-		yield return new WaitForSeconds (10f);
-		BlimpController.Move (blimpStart.position);
 	}
 	public void TurnBlimpOnHandler(getInBlimp _obj)
 	{

@@ -12,12 +12,9 @@ public class ActivateCoyote : MonoBehaviour {
 	}
 	void LandedHandler(Transform newPlayer)
 	{
+		coyote.enabled = true;
 		player = newPlayer;
 		coyote.destination = player.position;
-	}
-	void OnWillRenderObject()
-	{
-		coyote.enabled = true;
 	}
 
 

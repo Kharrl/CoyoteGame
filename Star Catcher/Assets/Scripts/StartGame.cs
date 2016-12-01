@@ -9,7 +9,7 @@ public class StartGame : MonoBehaviour {
 	}*/
 	public void OnMouseDown()
 			{
-		SceneManager.LoadScene(1);
+		SceneManager.LoadScene(2);
 			}
 	/*void NewLevelHandler(StartNewLevel obj)
 	{
