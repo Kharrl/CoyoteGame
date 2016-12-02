@@ -12,4 +12,9 @@ public class ResetBombHandlerScript : MonoBehaviour {
 	void ResetBombHandler() {
 		Destroy(this.gameObject);
 	}
+	void OnDestroy()
+	{
+		ResetBomb.DestroyBomb -= ResetBombHandler;
+	}
+
 }

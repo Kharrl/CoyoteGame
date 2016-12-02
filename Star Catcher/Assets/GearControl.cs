@@ -30,4 +30,7 @@ public class GearControl : MonoBehaviour {
 	{
 		StartCoroutine (StopLift ());
 	}
+	void OnDestroy(){
+		RidetheLift.Triggered -= TriggeredHandler;
+	}
 }

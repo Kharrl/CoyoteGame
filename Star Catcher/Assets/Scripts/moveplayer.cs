@@ -26,11 +26,17 @@ public class moveplayer: MonoBehaviour
 		myCC = GetComponent<CharacterController> ();
 		mud.Entermud += EntermudHandler;
 		HurtBunny.BunnyHit += BunnyDamageHandler;
+		displayUI.GameEnd += GameEndHandler;
 
 	}
 	void OnDestroy(){
 		HurtBunny.BunnyHit -= BunnyDamageHandler;
+		displayUI.GameEnd -= GameEndHandler;
 	}
+	void GameEndHandler (){
+		this.gameObject.SetActive (false);
+	}
+
 	void BunnyDamageHandler(HurtBunny obj)
 	{
 		

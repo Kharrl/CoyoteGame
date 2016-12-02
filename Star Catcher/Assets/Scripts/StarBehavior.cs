@@ -19,6 +19,7 @@ public class StarBehavior : MonoBehaviour {
 
 
 	}
+
 	void AddForceForwardHandler(ForceStarForward _obj)
 	{
 		StartCoroutine (runForce ());

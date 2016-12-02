@@ -13,4 +13,7 @@ public class startSparks : MonoBehaviour {
 	void TriggeredHandler (RidetheLift obj) {
 		Sparky.SetActive (true);
 	}
+	void OnDestroy(){
+		RidetheLift.Triggered -= TriggeredHandler;
+	}
 }

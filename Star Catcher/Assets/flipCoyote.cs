@@ -22,7 +22,7 @@ public class flipCoyote : MonoBehaviour {
 
 	}
 	// Update is called once per frame
-	void Update () {
-	
+	void OnDestroy () {
+		ChaseBunny.RunSpeeds -= RunSpeedsHandler;
 	}
 }

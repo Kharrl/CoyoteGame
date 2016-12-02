@@ -9,6 +9,9 @@ public class ReleaseCoyoteBlimp : MonoBehaviour {
 		ExitBlimp.Landing += LandedHandler;
 		CoyoteSpeed = Random.Range (30f, 40f);
 	}
+	void OnDestroy(){
+		ExitBlimp.Landing -= LandedHandler;
+	}
 	
 	void LandedHandler(GameObject obj)
 	{

@@ -20,4 +20,8 @@ public class CanvasControl : MonoBehaviour {
 	{
 		myCanvas.worldCamera = finalCam;
 	}
+	void OnDestroy(){
+		KillBunny.Kill -= KillHandler;
+		ExitBlimp.Landed -= LandedHandler;
+	}
 }

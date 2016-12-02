@@ -16,4 +16,7 @@ public class SmokeControl : MonoBehaviour {
 		Smoke1.SetActive (true);
 		Smoke2.SetActive (true);
 	}
+	void OnDestroy(){
+		KillBunny.Kill -= GetInHandler;
+	}
 }
