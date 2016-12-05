@@ -8,15 +8,16 @@ public class WeaponBase : MonoBehaviour {
 	public float WeaponSpeed;
 	public bool IsRangedWeapon;
 	public Transform Player;
+	public Transform Weapon;
 
 
 	// Use this for initialization
-	void Start () {
+	public void Subscribe () {
 		userupdate.UserInputs += UserInputHandler;
 	}
 	
 	// Update is called once per frame
-	void UserInputHandler (KeyCode _K) {
+	public void UserInputHandler (KeyCode _K) {
 		switch(_K)
 		{
 		case KeyCode.Z:
@@ -25,6 +26,7 @@ public class WeaponBase : MonoBehaviour {
 			break;
 		case KeyCode.X:
 			if (IsRangedWeapon == false)
+				print ("Swing");
 				StartCoroutine (MeleeAttack ());
 			break;
 		default:
@@ -36,12 +38,12 @@ public class WeaponBase : MonoBehaviour {
 		SendDmg (WeaponDmg);
 		yield return new WaitForSeconds (WeaponSpeed);
 	}
-	IEnumerator MeleeAttack()
+	public IEnumerator MeleeAttack()
 	{
-		this.transform.RotateAround (Player.position, Vector3.up, 90*Time.deltaTime);
-		yield return new WaitForSeconds (WeaponSpeed);
-		this.transform.RotateAround (Player.position, Vector3.up, -90 * Time.deltaTime);
-		yield return new WaitForSeconds (WeaponSpeed);
-		StopCoroutine (MeleeAttack ());
+		Weapon.RotateAround (Player.position, Vector3.up, 3590f*Time.deltaTime);
+		yield return new WaitForSeconds (1f);
+		Weapon.RotateAround (Player.position, Vector3.down, -3590f*Time.deltaTime);
+
+	
 	}
 }

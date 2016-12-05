@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Axe : MonoBehaviour {
+public class Axe : WeaponBase{
+	public int AxeDmg;
+	public int AxeSpeed;
 
-	// Use this for initialization
-	void Start () {
-	
+
+	public void Start () {
+		WeaponDmg = AxeDmg;
+		WeaponSpeed = AxeSpeed;
+		IsRangedWeapon = false;
+		Weapon = GetComponent<Transform> ();
+		Subscribe ();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+
 }
