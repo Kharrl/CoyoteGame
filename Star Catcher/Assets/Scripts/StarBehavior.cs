@@ -49,7 +49,7 @@ public class StarBehavior : MonoBehaviour {
 	IEnumerator DestroyStar()
 	{
 		print ("not Collected");
-		yield return new WaitForSeconds (6);
+		yield return new WaitForSeconds (4.5f);
 		Destroy (this.gameObject);
 
 }
