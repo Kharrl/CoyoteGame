@@ -28,6 +28,7 @@ public class displayUI : MonoBehaviour {
 		CollectedStars.text = "Stars Collected:"+StaticVar.StarsCollected;
 		GameTimer.text = "Time:"+Mathf.Round (StaticVar.GameClock-=Time.deltaTime);
 		if (StaticVar.GameClock <= 0f) {
+			StaticVar.GameClock = 0f;
 			GameOver.enabled=true;
 			Quit.enabled = true;
 			Retry.enabled = true;
