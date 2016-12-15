@@ -23,7 +23,7 @@ public class SpawnList : MonoBehaviour {
 	}
 	IEnumerator SendSpawn()
 	{
-		yield return new WaitForSeconds (3f);
+		yield return new WaitForSeconds (5f);
 		i = UnityEngine.Random.Range (0, MyList.Count - 1);
 		SpawnLocation (MyList [i].transform);
 		RunWave ();

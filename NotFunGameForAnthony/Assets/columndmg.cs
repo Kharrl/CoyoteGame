@@ -8,10 +8,11 @@ public class columndmg : MonoBehaviour {
 	public int Countdown = 15;
 	// Use this for initialization
 	void Start()
-	{
-		for(int Countdown=0; Countdown==Countdown; Countdown++)
-			Power=BuildPower(Power);
-	
+	{ 	Power=BuildPower(Power);
+		for (int Countdown = 0; Countdown < 15; Countdown++) {
+			Power += 10;
+		}
+		killem (Power);
 	}
 	
 	// Update is called once per frame

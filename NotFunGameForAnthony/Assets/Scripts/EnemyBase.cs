@@ -38,6 +38,7 @@ public class EnemyBase : MonoBehaviour {
 		if (EnemyHealth <= 0) {
 			transform.position = Respawn.position;
 			EnemyHealth = EnemyMaxHealth;
+			AddMe (this.gameObject);
 		}   
 	}
 	public void KnockBackHandler(float _K)
