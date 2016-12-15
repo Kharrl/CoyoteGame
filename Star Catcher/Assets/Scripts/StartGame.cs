@@ -3,12 +3,13 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour {
-	//void Start()
-	/*{
-		StartNewLevel.NewLevel += NewLevelHandler;
-	}*/
+	public AudioClip click;
+	private AudioSource source;
+
 	public void OnMouseDown()
 			{
+		source = GetComponent<AudioSource> ();
+		source.PlayOneShot (click, 1f);
 		StaticVar.GameClock = 120f;
 		StaticVar.StarPower = 50;
 		SceneManager.LoadScene(2);

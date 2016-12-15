@@ -1,14 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface IWeapon{ 
-
-	int WeaponSpeed();
-	int WeaponDmg();
+public interface IWeapon {
+	void Awake();
+	void Special ();
 
 }
-public interface IEnemy{
-	int Health();
-	int StalkSpeed ();
-	void Attack ();
+public interface IPowerup{
+	void OnTriggerEnter ();
+	Rigidbody PowerUp{set;
+}
 }

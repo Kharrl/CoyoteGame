@@ -15,6 +15,8 @@ public class moveplayer: MonoBehaviour
 	public float slideTime = 0.1f;
 	public bool InMud=false;
 	public bool Grounded = true;
+	public AudioClip run;
+	private AudioSource source;
 
 
 
@@ -27,6 +29,7 @@ public class moveplayer: MonoBehaviour
 		mud.Entermud += EntermudHandler;
 		HurtBunny.BunnyHit += BunnyDamageHandler;
 		displayUI.GameEnd += GameEndHandler;
+		source = GetComponent<AudioSource> ();
 
 	}
 	void OnDestroy(){
@@ -109,6 +112,8 @@ public class moveplayer: MonoBehaviour
 			//{
 			//	myAnimate.SetTrigger("Jump");
 			//}
+		if (myCC.isGrounded && myCC.velocity.x != 0)
+			source.PlayOneShot (run, 1f);
 		if (myCC.isGrounded) {
 			StaticVar.JumperCount = 0;
 			//myAnimate.SetLayerWeight (1, 0);

@@ -21,20 +21,29 @@ public class displayUI : MonoBehaviour {
 	}
 	void OnDestroy(){
 		HurtBunny.BunnyHit -= BunnyGameHandler;
+		LevelEnd.levelending += EndLevelHandler;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		CollectedStars.text = "Stars Collected:"+StaticVar.StarsCollected;
-		GameTimer.text = "Time:"+Mathf.Round (StaticVar.GameClock-=Time.deltaTime);
+		CollectedStars.text = "Stars Collected:" + StaticVar.StarsCollected;
+		GameTimer.text = "Time:" + Mathf.Round (StaticVar.GameClock -= Time.deltaTime);
 		if (StaticVar.GameClock <= 0f) {
 			StaticVar.GameClock = 0f;
-			GameOver.enabled=true;
+			GameOver.enabled = true;
 			Quit.enabled = true;
 			Retry.enabled = true;
 			routines.enabled = true;
 			GameEnd ();
 		}
+	}
+		void EndLevelHandler(){
+		StaticVar.GameClock = 0f;
+		GameOver.enabled=true;
+		Quit.enabled = true;
+		Retry.enabled = true;
+		routines.enabled = true;
+		GameEnd ();		
 	}
 	void BunnyGameHandler(HurtBunny obj)
 	{

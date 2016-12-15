@@ -28,8 +28,8 @@ public class VehicleCamera : MonoBehaviour {
 	}
 	public void LandedHandler(Transform obj)
 	{
-		myCamera.orthographicSize = 25;
-		myCamera.transform.position = Greenlandpos.position;
+		myCamera.orthographicSize = 30;
+
 	}
 	public void DockedHandler(ExitBoat obj)
 	{
