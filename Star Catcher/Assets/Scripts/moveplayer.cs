@@ -35,6 +35,7 @@ public class moveplayer: MonoBehaviour
 	void OnDestroy(){
 		HurtBunny.BunnyHit -= BunnyDamageHandler;
 		displayUI.GameEnd -= GameEndHandler;
+		mud.Entermud -= EntermudHandler;
 	}
 	void GameEndHandler (){
 		this.gameObject.SetActive (false);

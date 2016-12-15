@@ -12,6 +12,7 @@ public class EnemyBase : MonoBehaviour {
 	public Transform Player;
 	public Transform Shrine;
 	public Transform Relic;
+	public Transform Respawn;
 	public bool InRange=false;
 	private float Power;
 	// Use this for initialization
@@ -34,6 +35,10 @@ public class EnemyBase : MonoBehaviour {
 	void DamageHandler (int D)
 	{
 		EnemyHealth -= D;
+		if (EnemyHealth <= 0) {
+			transform.position = Respawn.position;
+			EnemyHealth = EnemyMaxHealth;
+		}   
 	}
 	public void KnockBackHandler(float _K)
 	{

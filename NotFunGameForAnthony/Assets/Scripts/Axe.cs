@@ -6,7 +6,7 @@ public class Axe : WeaponBase, IWeapon {
 	public float KnockBack = 30f;
 	public static Action <float>SendKnockback;
 	public void Awake(){
-		WeaponDmg = 5;
+		WeaponDmg = 50;
 		WeaponSpeed = 1;
 	}// Use this for initialization
 	void Start () {
@@ -21,7 +21,6 @@ public class Axe : WeaponBase, IWeapon {
 		case KeyCode.Space:
 			
 			UseWeapon ();
-			Special ();
 			break;
 		default:
 			break;

@@ -23,4 +23,10 @@ public class starCollectSFX : MonoBehaviour {
 		float vol = Random.Range (MinVol, MaxVol);
 		source.PlayOneShot (Collect, vol);
 	}
+	void OnDestroy()
+	{
+		StarCollect.IsCollected -= CollectedHandler;
+		VehicleStars.BlimpCollect -= BlimpHandler;
+	}
 }
+
