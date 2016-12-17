@@ -14,6 +14,11 @@ public class BlimpControl : MonoBehaviour {
 		BlimpController.enabled = false;
 		getInBlimp.GetIn = TurnBlimpOnHandler;
 		ExitBlimp.Landed = LandedHandler;
+		displayUI.GameEnd += GameEndHandler;
+	}
+	void GameEndHandler ()
+	{
+		BlimpController.enabled=false;
 	}
 	IEnumerator EnterBlimp()
 	{

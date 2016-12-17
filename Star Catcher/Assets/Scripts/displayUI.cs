@@ -22,6 +22,7 @@ public class displayUI : MonoBehaviour {
 	void OnDestroy(){
 		HurtBunny.BunnyHit -= BunnyGameHandler;
 		LevelEnd.levelending += EndLevelHandler;
+		LevelEnded.GameOver += EndLevelHandler;
 	}
 	
 	// Update is called once per frame

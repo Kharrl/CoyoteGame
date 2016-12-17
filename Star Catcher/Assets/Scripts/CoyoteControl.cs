@@ -8,7 +8,9 @@ public class CoyoteControl : MonoBehaviour {
 	public SpriteRenderer Art;
 	public GameObject death;
 	public AudioClip bark;
-	private AudioSource source;
+	public AudioClip Dying;
+	public AudioSource source2;
+	public AudioSource source;
 	// Use this for initialization
 	void Start()
 	{
@@ -17,11 +19,11 @@ public class CoyoteControl : MonoBehaviour {
 	}
 	void OnTriggerEnter()
 	{
-		source = GetComponent<AudioSource> ();
 		source.PlayOneShot (bark, 1f);
 		StartCoroutine (Blink ());
 		CoyoteHealth--;
 		if (CoyoteHealth <= 0) {
+			source2.PlayOneShot (Dying, 1f);
 			death.SetActive (true);
 			Destroy (Coyote);
 		}
